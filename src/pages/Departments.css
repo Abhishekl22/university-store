@@ -1,0 +1,103 @@
+/* src/pages/Departments.css */
+.departments-page {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.departments-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.departments-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.departments-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.departments-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.department-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.department-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.department-card .card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.department-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.department-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.department-card .card-content {
+  padding: 1.5rem;
+}
+
+.department-card .card-content h3 {
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.department-card .card-content p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.department-card .card-content button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.department-card .card-content button:hover {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .departments-page {
+    padding: 2rem 1rem;
+  }
+
+  .departments-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .departments-grid {
+    grid-template-columns: 1fr;
+  }
+}
