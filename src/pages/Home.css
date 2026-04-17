@@ -3,6 +3,18 @@
   min-height: 100vh;
 }
 
+.search-bar {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
 .hero-section {
   height: 80vh;
   background-size: cover;

@@ -1,7 +1,8 @@
 // src/pages/Home.jsx
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
@@ -73,15 +74,15 @@ function Home() {
         <div className="container">
           <h2>Explore Universities</h2>
           <p>Choose a university to view its departments and products</p>
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search University..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <FontAwesomeIcon icon="search" className="search-icon" />
-          </div>
+<div className="search-bar">
+  <input
+    type="text"
+    placeholder="Search University..."
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  <FontAwesomeIcon icon={faSearch} className="search-icon" />
+</div>
         </div>
       </div>
 
