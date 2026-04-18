@@ -14,6 +14,7 @@ import ProductDetail from './pages/ProductDetail';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Support from './pages/Support';
+import Cart from './pages/Cart';
 import './App.css';
 
 function App() {
@@ -32,12 +33,16 @@ function App() {
     setCurrentUser(user);
     setIsLoggedIn(true);
     localStorage.setItem('currentUser', JSON.stringify(user));
+    window.dispatchEvent(new Event('user-login'));
+    window.dispatchEvent(new Event('cart-update'));
   };
 
   const handleLogout = () => {
     setCurrentUser(null);
     setIsLoggedIn(false);
     localStorage.removeItem('currentUser');
+    window.dispatchEvent(new Event('user-logout'));
+    window.dispatchEvent(new Event('cart-update'));
   };
 
   return (
@@ -56,6 +61,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

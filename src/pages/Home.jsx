@@ -1,18 +1,19 @@
 // src/pages/Home.jsx
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 const universities = [
-  { id: 1, name: 'Harvard University', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400', description: 'Ivy League university in Cambridge, Massachusetts' },
-  { id: 2, name: 'Stanford University', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400', description: 'Private research university in Stanford, California' },
-  { id: 3, name: 'MIT', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400', description: 'World-renowned institute of technology' },
-  { id: 4, name: 'Oxford University', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400', description: 'Oldest university in the English-speaking world' },
-  { id: 5, name: 'Cambridge University', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400', description: 'Collegiate public research university' },
-  { id: 6, name: 'University of Tokyo', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=400', description: 'Leading research university in Japan' }
+  { id: 1, name: 'Harvard University', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600', description: 'Ivy League university in Cambridge, Massachusetts' },
+  { id: 2, name: 'Stanford University', image: '/images/product1.jpg', description: 'Private research university in Stanford, California' },
+  { id: 3, name: 'MIT', image: '/images/university2.jpeg', description: 'World-renowned institute of technology' },
+  { id: 4, name: 'Oxford University', image: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=600', description: 'Oldest university in the English-speaking world' },
+  { id: 5, name: 'Cambridge University', image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600', description: 'Collegiate public research university' },
+  { id: 6, name: 'University of Tokyo', image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600', description: 'Leading research university in Japan' },
+  { id: 7, name: 'Yale University', image: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600', description: 'Ivy League university in New Haven, Connecticut' },
+  { id: 8, name: 'Princeton University', image: '/images/university1.jpg', description: 'Ivy League research university in New Jersey' }
 ];
 
 const heroImages = [
@@ -51,7 +52,7 @@ function Home() {
       <div className="hero-section" style={{ backgroundImage: `url(${heroImages[currentImageIndex]})` }}>
         <div className="hero-overlay"></div>
         <div className="hero-content animate-fadeUp">
-          <h1>Welcome to <span className="highlight">University Hub</span></h1>
+          <h1>Welcome to <span className="highlight">EduStore</span></h1>
           <p>Your gateway to quality education products and university resources</p>
           <div className="hero-stats">
             <div className="stat">
@@ -74,15 +75,15 @@ function Home() {
         <div className="container">
           <h2>Explore Universities</h2>
           <p>Choose a university to view its departments and products</p>
-<div className="search-bar">
-  <input
-    type="text"
-    placeholder="Search University..."
-    value={searchTerm}
-    onChange={(e) => setSearchTerm(e.target.value)}
-  />
-  <FontAwesomeIcon icon={faSearch} className="search-icon" />
-</div>
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search University..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          </div>
         </div>
       </div>
 

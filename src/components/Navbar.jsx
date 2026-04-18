@@ -1,9 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// Replace the brands import with this
-// Change this line:
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
@@ -16,18 +13,63 @@ import {
   faKey,
   faBars,
   faTimes,
-  faUniversity
+  faUniversity,
+  faShoppingCart
 } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 
-function Navbar({ isLoggedIn, currentUser, onLogout }) {
+const Navbar = ({ isLoggedIn, currentUser, onLogout }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   const navigate = useNavigate();
+
+  // Update cart count from localStorage
+  const updateCartCount = () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const email = currentUser?.email || 'guest';
+    const cartKey = `cart_${email}`;
+    const savedCart = localStorage.getItem(cartKey);
+    if (savedCart) {
+      const cart = JSON.parse(savedCart);
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      setCartCount(count);
+    } else {
+      setCartCount(0);
+    }
+  };
+
+  // Listen for storage changes and update cart count
+  useEffect(() => {
+    updateCartCount();
+    window.addEventListener('storage', updateCartCount);
+    window.addEventListener('cart-update', updateCartCount);
+    
+    // Update when user logs in/out
+    const handleUserChange = () => updateCartCount();
+    window.addEventListener('user-login', handleUserChange);
+    window.addEventListener('user-logout', handleUserChange);
+    
+    // Force cart update event
+    const handleForceUpdate = () => updateCartCount();
+    window.addEventListener('force-cart-update', handleForceUpdate);
+    
+    return () => {
+      window.removeEventListener('storage', updateCartCount);
+      window.removeEventListener('cart-update', updateCartCount);
+      window.removeEventListener('user-login', handleUserChange);
+      window.removeEventListener('user-logout', handleUserChange);
+      window.removeEventListener('force-cart-update', handleForceUpdate);
+    };
+  }, []);
 
   const handleLogout = () => {
     onLogout();
     navigate('/login');
     setIsMobileMenuOpen(false);
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
   };
 
   return (
@@ -47,6 +89,12 @@ function Navbar({ isLoggedIn, currentUser, onLogout }) {
           </ul>
 
           <div className="nav-buttons">
+            {/* Cart Icon */}
+            <button className="cart-icon-btn" onClick={handleCartClick}>
+              <FontAwesomeIcon icon={faShoppingCart} />
+              {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+            </button>
+
             {isLoggedIn ? (
               <>
                 <Link to="/change-password" className="nav-btn btn-outline" onClick={() => setIsMobileMenuOpen(false)}>
@@ -75,6 +123,6 @@ function Navbar({ isLoggedIn, currentUser, onLogout }) {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

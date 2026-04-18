@@ -42,6 +42,31 @@ function Products() {
     navigate(`/product/${product.id}`);
   };
 
+  const handleAddToCart = (product) => {
+    const currentUser = localStorage.getItem('currentUser');
+    if (!currentUser) {
+      alert('Please login to add items to cart');
+      navigate('/login');
+      return;
+    }
+
+    const user = JSON.parse(currentUser);
+    const cartKey = `cart_${user.email}`;
+    const existingCart = JSON.parse(localStorage.getItem(cartKey) || '[]');
+    
+    const existingItem = existingCart.find(item => item.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      existingCart.push({ ...product, quantity: 1 });
+    }
+    
+    localStorage.setItem(cartKey, JSON.stringify(existingCart));
+    alert(`${product.name} added to cart!`);
+    window.dispatchEvent(new Event('storage'));
+    window.dispatchEvent(new Event('cart-update'));
+  };
+
   if (!department) return null;
 
   return (
@@ -70,9 +95,14 @@ function Products() {
               <p className="description">{product.description}</p>
               <p className="price">${product.price}</p>
               <p className="quantity">Stock: {product.quantity} units</p>
-              <button onClick={() => handleProductDetail(product)}>
-                View Details →
-              </button>
+              <div className="card-buttons">
+                <button className="view-btn" onClick={() => handleProductDetail(product)}>
+                  View Details
+                </button>
+                <button className="add-cart-btn" onClick={() => handleAddToCart(product)}>
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         ))}

@@ -1,5 +1,7 @@
 // src/pages/Contact.jsx
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faPhone, faEnvelope, faClock, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import './Contact.css';
 
 function Contact() {
@@ -20,47 +22,70 @@ function Contact() {
 
   return (
     <div className="contact-page">
-      <div className="contact-header">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you</p>
+      <div className="contact-hero">
+        <div className="hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600)' }}></div>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <h1>Get in <span className="highlight">Touch</span></h1>
+          <p>We'd love to hear from you</p>
+        </div>
       </div>
 
       <div className="contact-container">
         <div className="contact-info">
-          <h2>Get in Touch</h2>
-          <div className="info-item">
-            <span className="icon">📍</span>
-            <div>
-              <h3>Address</h3>
-              <p>123 University Avenue, Education City, EC 12345</p>
+          <div className="info-header">
+            <h2>Contact Information</h2>
+            <p>Reach out to us through any of these channels</p>
+          </div>
+          <div className="info-cards">
+            <div className="info-card">
+              <div className="card-icon">
+                <FontAwesomeIcon icon={faMapMarkerAlt} />
+              </div>
+              <div className="card-content">
+                <h3>Address</h3>
+                <p>Chandigarh, India</p>
+              </div>
+            </div>
+            <div className="info-card">
+              <div className="card-icon">
+                <FontAwesomeIcon icon={faPhone} />
+              </div>
+              <div className="card-content">
+                <h3>Phone</h3>
+                <p>+91 86792-01047</p>
+              </div>
+            </div>
+            <div className="info-card">
+              <div className="card-icon">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </div>
+              <div className="card-content">
+                <h3>Email</h3>
+                <p>abhishekrana23da@gmail.com</p>
+              </div>
+            </div>
+            <div className="info-card">
+              <div className="card-icon">
+                <FontAwesomeIcon icon={faClock} />
+              </div>
+              <div className="card-content">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+              </div>
             </div>
           </div>
-          <div className="info-item">
-            <span className="icon">📞</span>
-            <div>
-              <h3>Phone</h3>
-              <p>+1 (555) 123-4567</p>
-            </div>
-          </div>
-          <div className="info-item">
-            <span className="icon">✉️</span>
-            <div>
-              <h3>Email</h3>
-              <p>support@edustore.com</p>
-            </div>
-          </div>
-          <div className="info-item">
-            <span className="icon">⏰</span>
-            <div>
-              <h3>Business Hours</h3>
-              <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-            </div>
+          <div className="map-image">
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600" alt="Map" />
           </div>
         </div>
 
         <div className="contact-form">
-          <h2>Send us a Message</h2>
-          {submitted && <div className="success-message">Message sent successfully!</div>}
+          <div className="form-header">
+            <h2>Send us a Message</h2>
+            <p>Fill out the form below and we'll get back to you</p>
+          </div>
+          {submitted && <div className="success-message"><FontAwesomeIcon icon={faPaperPlane} /> Message sent successfully!</div>}
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <input
@@ -98,7 +123,9 @@ function Contact() {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="submit-btn">
+              <FontAwesomeIcon icon={faPaperPlane} /> Send Message
+            </button>
           </form>
         </div>
       </div>

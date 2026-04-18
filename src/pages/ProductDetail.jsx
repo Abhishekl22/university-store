@@ -39,6 +39,8 @@ function ProductDetail() {
     
     localStorage.setItem(cartKey, JSON.stringify(existingCart));
     alert('Product added to cart!');
+    window.dispatchEvent(new Event('storage'));
+    window.dispatchEvent(new Event('cart-update'));
   };
 
   if (!product) return null;

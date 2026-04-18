@@ -1,84 +1,79 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faFacebook, 
-  faTwitter, 
-  faInstagram, 
-  faLinkedin 
+  faGithub, 
+  faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
 import { 
   faMapMarkerAlt, 
   faPhone, 
-  faEnvelope, 
-  faPaperPlane 
+  faEnvelope,
+  faHome,
+  faInfoCircle,
+  faBox,
+  faHeadset,
+  faGraduationCap
 } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-container">
-        {/* About Section */}
-        <div className="footer-section">
-          <h3>About EduStore</h3>
-          <p>Your one-stop destination for quality educational products and university merchandise.</p>
-          <div className="social-icons">
-            <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
-            <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-            <a href="#"><FontAwesomeIcon icon={faLinkedin} /></a>
+      <div className="footer-content">
+        {/* Brand & Contact Section */}
+        <div className="footer-left">
+          <div className="footer-brand">
+            <FontAwesomeIcon icon={faGraduationCap} className="brand-icon" />
+            <h2>EduStore</h2>
+          </div>
+          <p className="footer-description">
+            Your trusted partner for quality educational products and university resources.
+          </p>
+          <div className="footer-contact">
+            <div className="contact-item">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <span>abhishekrana23da@gmail.com</span>
+            </div>
+            <div className="contact-item">
+              <FontAwesomeIcon icon={faPhone} />
+              <span>+91 86792-01047</span>
+            </div>
+            <div className="contact-item">
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
+              <span>Chandigarh, India</span>
+            </div>
           </div>
         </div>
 
         {/* Quick Links Section */}
-        <div className="footer-section">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/support">Support</a></li>
-          </ul>
-        </div>
-
-        {/* Contact Info Section */}
-        <div className="footer-section">
-          <h3>Contact Info</h3>
-          <div className="contact-info">
-            <p>
-              <FontAwesomeIcon icon={faMapMarkerAlt} />
-              <span>123 University Ave, City</span>
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faPhone} />
-              <span>+1 234 567 890</span>
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faEnvelope} />
-              <span>info@edustore.com</span>
-            </p>
+        <div className="footer-right">
+          <div className="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="/"><FontAwesomeIcon icon={faHome} /> Home</a></li>
+              <li><a href="/about"><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
+              <li><a href="/products"><FontAwesomeIcon icon={faBox} /> Products</a></li>
+              <li><a href="/contact"><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
+              <li><a href="/support"><FontAwesomeIcon icon={faHeadset} /> Support</a></li>
+            </ul>
           </div>
-        </div>
 
-        {/* Newsletter Section */}
-        <div className="footer-section">
-          <h3>Newsletter</h3>
-          <p>Subscribe for updates and offers</p>
-          <form className="newsletter-form">
-            <input 
-              type="email" 
-              placeholder="Your email" 
-              required 
-            />
-            <button type="submit">
-              <FontAwesomeIcon icon={faPaperPlane} /> Subscribe
-            </button>
-          </form>
+          <div className="footer-social">
+            <h3>Connect With Us</h3>
+            <div className="social-icons">
+              <a href="https://github.com/abhishekl22/" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+              <a href="https://www.linkedin.com/in/abhishek-rana099" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>&copy; 2024 EduStore. All rights reserved.</p>
+        <p>&copy; 2024 EduStore. All rights reserved. Made with ❤️ by Abhishek Rana</p>
       </div>
     </footer>
   );
