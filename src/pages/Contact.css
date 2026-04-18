@@ -313,23 +313,151 @@
 }
 
 @media (max-width: 768px) {
+  .contact-hero {
+    height: 45vh;
+    min-height: 320px;
+  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-content p {
     font-size: 1rem;
   }
 
+  .contact-container {
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    gap: 2rem;
+  }
+
   .info-cards {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
-  
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+
   .contact-form {
     padding: 2rem;
   }
-  
+
   .form-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-header p {
+    font-size: 0.9rem;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    height: 40vh;
+    min-height: 280px;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .contact-container {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .info-header h2 {
     font-size: 1.5rem;
+  }
+
+  .info-header p {
+    font-size: 0.9rem;
+  }
+
+  .info-card {
+    padding: 1.2rem;
+  }
+
+  .card-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .card-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .form-header p {
+    font-size: 0.85rem;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .input-group textarea {
+    min-height: 100px;
+  }
+
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .success-message {
+    font-size: 0.9rem;
+    padding: 0.8rem;
   }
 }

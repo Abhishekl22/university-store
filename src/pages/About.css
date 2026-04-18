@@ -326,9 +326,24 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .mission-vision-section {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .offerings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
+  .about-hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-content p {
@@ -337,23 +352,198 @@
 
   .mission-vision-section {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+
+  .mv-card {
+    padding: 2rem;
+  }
+
+  .mv-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .mv-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .mv-card p {
+    font-size: 1rem;
+  }
+
+  .offerings-section {
+    margin: 3rem auto;
+    padding: 0 1.5rem;
   }
 
   .section-title {
     font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .offerings-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-image {
+    height: 180px;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    transform: translateY(-35px);
+  }
+
+  .offering-card:hover .icon-wrapper {
+    transform: translateY(-40px) scale(1.1);
+  }
+
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+
+  .stats-section {
+    padding: 4rem 1.5rem;
+    margin: 3rem 0;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
   }
 
   .stat-card h3 {
     font-size: 2rem;
   }
+
+  .stat-card p {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
+  .about-hero {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .mission-vision-section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .mv-card {
+    padding: 1.5rem;
+  }
+
+  .mv-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+
+  .mv-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .mv-card p {
+    font-size: 0.9rem;
+  }
+
+  .offerings-section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .card-content {
+    padding: 1.2rem;
+  }
+
+  .icon-wrapper {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+
+  .stats-section {
+    padding: 3rem 1rem;
+    margin: 2rem 0;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .stat-card p {
+    font-size: 0.9rem;
   }
 }

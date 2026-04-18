@@ -323,12 +323,31 @@
 }
 
 @media (max-width: 768px) {
+  .support-hero {
+    height: 45vh;
+    min-height: 320px;
+  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-content p {
     font-size: 1rem;
+  }
+
+  .support-container {
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    gap: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
   }
 
   .faq-section {
@@ -347,5 +366,126 @@
 
   .faq-question h3 {
     font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding: 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+  }
+
+  .option-image {
+    height: 120px;
+  }
+
+  .option-content {
+    padding: 1.5rem;
+  }
+
+  .option-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .option-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .option-content p {
+    font-size: 0.9rem;
+  }
+
+  .option-content button {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .support-hero {
+    height: 40vh;
+    min-height: 280px;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .support-container {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-header p {
+    font-size: 0.85rem;
+  }
+
+  .faq-section {
+    padding: 1.5rem;
+  }
+
+  .faq-question {
+    padding: 0.8rem;
+  }
+
+  .question-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .faq-question h3 {
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    padding: 0.8rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.85rem;
+  }
+
+  .option-image {
+    height: 100px;
+  }
+
+  .option-content {
+    padding: 1.2rem;
+  }
+
+  .option-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .option-content h3 {
+    font-size: 1rem;
+  }
+
+  .option-content p {
+    font-size: 0.85rem;
+  }
+
+  .option-content button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
 }
